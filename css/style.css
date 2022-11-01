@@ -1,0 +1,136 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background: #fafafa;
+	color: #333;
+	font-size: 14px;
+	font-family: Tahoma, sans-serif;
+}
+
+button {
+	padding: 10px 20px;
+	cursor: pointer;
+	transition: all .4s ease-in-out;
+	background: #777;
+	color: #fafafa;
+	border: none;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+button:hover {
+	transition: all .4s ease-in-out;
+	background: #333;
+}
+
+.container {
+	max-width: 1200px;
+	padding: 50px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.search {
+	margin-bottom: 30px;
+	transition: all .4s ease-in-out;
+	max-width: 600px;
+	width: 100%;
+	display: flex;
+}
+
+.search input {
+	width: 100%;
+}
+
+.post {
+	display: grid;
+	grid-template-columns: repeat(3, 300px);
+	justify-content: center;
+	grid-gap: 10px;
+}
+
+.post__item {
+	min-width: 300px;
+	max-width: 300px;
+	border: 2px solid #333;
+	box-sizing: border-box;
+	padding: 5px;
+	transition: all .4s ease-in-out;
+}
+
+.post__item-title {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 18px;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+
+.post__item-description {
+	margin-bottom: 10px;
+}
+
+.active {
+	background: #333;
+	color: #fafafa;
+	transition: all .4s ease-in-out;
+}
+
+.checkbox {
+	visibility: hidden;
+	width: 14px;
+	height: 14px;
+	position: relative;
+}
+
+.checkbox::after {
+	content: '';
+	position: absolute;
+	visibility: visible;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 1px solid orange;
+	border-radius: 3px;
+}
+
+.checked::before {
+	content: '';
+	position: absolute;
+	visibility: visible;
+	top: 0;
+	left: calc(50% - 4px);
+	width: 6px;
+	height: 6px;
+	border-width: 2px;
+	border-style: solid;
+	border-top-color: transparent;
+	border-left-color: transparent;
+	border-bottom-color: orange;
+	border-right-color: orange;
+	transform: rotate(45deg);
+}
+
+
+@media screen and (max-width: 1023px) {
+
+	.post {
+		grid-template-columns: repeat(2, 300px);
+		padding: 35px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+
+	.post {
+		grid-template-columns: auto;
+		padding: 21px;
+	}
+}
