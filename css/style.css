@@ -47,6 +47,11 @@ button:hover {
 	width: 100%;
 }
 
+.search-info {
+	grid-column-start: 1;
+	grid-column-end: 3;
+}
+
 .post {
 	display: grid;
 	grid-template-columns: repeat(3, 300px);

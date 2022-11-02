@@ -26,9 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
 		fetch(source).then((res) => {
 			return res.json();
 		}).then((data) => {
-			console.log(data);
-			if(data.length != 0) document.querySelectorAll(".post__item").forEach((el) => el.remove());
-			createItem(data);
+			document.querySelectorAll(".post > *").forEach((el) => el.remove());
+			if(data.length != 0) {
+				createItem(data);
+			} else {
+				post.innerHTML = "<div class='search-info'>По вашему запросу ничего не найдено, возможно нужно ввести полное название товара.</div>";
+			}
 		});
 	});
 
